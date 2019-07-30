@@ -4,10 +4,23 @@
   <meta charset="UTF-8">
   <title>SVG sprites testing</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
+
+<style>
+    code{
+        background: #000000;
+        color: #ffffff;
+        padding: 3px;
+        }    
+    </style>
 <body>
-<!-- partial:index.partial.html -->
-<svg>
+
+
+
+<div class="container">
+    <div class="row">
+        <svg>
 	<defs>
 <!-- 		mastercard -->
 		
@@ -90,7 +103,23 @@
 <svg class="icon">
   <use xlink:href="#amazon"></use>
 </svg>
-<!-- partial -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2>Few observations</h2>
+        <p>I tested the SVG sprites, rather than the normal PNG sprites and also didn't use the CSS properties since it was not needed in this case with SVG's IMHO after reading certain blogs.  I tested out the payment options and their SVG's from the footer. There were 7 SVG images. I combined them all in to a single <code>SVG</code> tag. Within it are the <code>DEFS</code> tags. After defining, them I called those individual SVG layouts into the different SVG tags with the class <code>.icon</code> using the <code>use xlink:href</code> 
+        method. Here are few observations.          
+        </p>
+        <ol>
+            <li>The original 7 files, combined were amounting to approx 9.72kbs</li>
+            <li>The combined SVG file loaded was reduced to the size of 4.1kbs(sometimes it shows 4kb or 4.2kbs), which was approx 48% lesser then the original 7 SVG's combined</li>
+			<li>The load time of the two assets the STYLE.css (in my case only 4 lines css) are 18ms and the svgsprites are 23 to 45ms in the range respectively.</li>
+			<li>If there is anything else, I observe, I will surely share it with you.</li>            
+        </ol>
+    </div>
+</div>
   
 </body>
 </html>
